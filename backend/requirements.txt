@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy[asyncio]
+asyncpg
+alembic
+python-dotenv
+pydantic
+pydantic-settings
+greenlet
+feedparser
+beautifulsoup4
+thefuzz
+python-Levenshtein
+aiohttp
+fake-useragent
+loguru
