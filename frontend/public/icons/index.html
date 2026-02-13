@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Icon previews — Coin87</title>
+  <style>body{font-family:Inter,Arial,sans-serif;padding:24px;background:#fff} .grid{display:flex;gap:24px;align-items:center} .card{text-align:center} img{width:128px;height:128px;display:block;margin:0 auto 8px;border-radius:16px}</style>
+</head>
+<body>
+  <h1>Preview: 3 ý tưởng icon (phẳng)</h1>
+  <p>Màu nền: <strong>#FFD400</strong> — chữ logo: đen.</p>
+  <div class="grid">
+    <div class="card">
+      <img src="./icon-idea1.svg" alt="Idea 1">
+      <div>Idea 1 — chữ `C87` trung tâm</div>
+    </div>
+    <div class="card">
+      <img src="./icon-idea2.svg" alt="Idea 2">
+      <div>Idea 2 — hình đồng xu, viền</div>
+    </div>
+    <div class="card">
+      <img src="./icon-idea3.svg" alt="Idea 3">
+      <div>Idea 3 — chữ C cách điệu + 87</div>
+    </div>
+  </div>
+  <hr>
+  <h2>Hướng dẫn xuất PNG</h2>
+  <pre>
+# Inkscape (Windows)
+inkscape icon-idea1.svg --export-filename=icon-idea1-192.png -w 192 -h 192
+inkscape icon-idea1.svg --export-filename=icon-idea1-144.png -w 144 -h 144
+
+# ImageMagick (magick)
+magick convert -background none -resize 192x192 "icon-idea1.svg" "icon-idea1-192.png"
+magick convert -background none -resize 144x144 "icon-idea1.svg" "icon-idea1-144.png"
+
+# rsvg-convert (if available)
+rsvg-convert -w 192 -h 192 icon-idea1.svg -o icon-idea1-192.png
+  </pre>
+</body>
+</html>

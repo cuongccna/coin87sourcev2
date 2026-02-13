@@ -1,0 +1,20 @@
+"""Systemd Service for Health Monitor
+Location: /etc/systemd/system/coin87-monitor.service
+"""
+
+[Unit]
+Description=Coin87 Health Monitor & Alerts
+After=network.target coin87-backend.service
+
+[Service]
+Type=simple
+User=coin87admin
+Group=coin87admin
+WorkingDirectory=/opt/coin87/scripts
+Environment="PATH=/opt/coin87/backend/venv/bin"
+ExecStart=/opt/coin87/backend/venv/bin/python monitor.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

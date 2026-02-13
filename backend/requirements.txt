@@ -14,3 +14,6 @@ python-Levenshtein
 aiohttp
 fake-useragent
 loguru
+trafilatura
+dateparser
+google-generativeai

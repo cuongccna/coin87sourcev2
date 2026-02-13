@@ -1,0 +1,53 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main  # Deploy on push to main branch
+
+jobs:
+  deploy:
+    name: Deploy to Production VPS
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          script: |
+            set -e
+            cd /opt/coin87
+            
+            echo "=== Pulling latest code ==="
+            git pull origin main
+            
+            echo "=== Backend Setup ==="
+            cd /opt/coin87/backend
+            source venv/bin/activate
+            pip install -r requirements.txt
+            
+            echo "=== Running Migrations ==="
+            # Add migration commands here when ready
+            # alembic upgrade head
+            
+            echo "=== Frontend Setup ==="
+            cd /opt/coin87/frontend
+            npm install
+            npm run build
+            
+            echo "=== Restarting Services ==="
+            sudo systemctl restart coin87-backend
+            sudo systemctl restart coin87-frontend
+            
+            echo "=== Checking Service Status ==="
+            sudo systemctl is-active coin87-backend
+            sudo systemctl is-active coin87-frontend
+            
+            echo "=== Deployment Complete ==="

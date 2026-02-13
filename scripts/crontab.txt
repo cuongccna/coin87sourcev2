@@ -1,0 +1,10 @@
+# Cron Jobs for Coin87
+
+# Database Backup - Daily at 3:00 AM
+0 3 * * * /opt/coin87/scripts/backup_db.sh >> /var/log/coin87/backup.log 2>&1
+
+# Cleanup old logs - Weekly on Sunday at 2:00 AM
+0 2 * * 0 find /var/log/coin87 -name "*.log" -mtime +30 -delete
+
+# Optional: Restart services weekly (if needed for memory cleanup)
+# 0 4 * * 0 systemctl restart coin87-backend coin87-frontend

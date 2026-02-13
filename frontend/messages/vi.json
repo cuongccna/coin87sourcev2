@@ -1,0 +1,235 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "retry": "Thử lại",
+    "back": "Quay về",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "more": "Thêm",
+    "less": "Ít hơn"
+  },
+  "header": {
+    "title": "Coin87",
+    "subtitle": "Tin tức Crypto thông minh"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "signals": "Tín hiệu",
+    "news": "Tin tức",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt"
+  },
+  "language": {
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt",
+    "switchTo": "Chuyển sang {language}"
+  },
+  "home": {
+    "signalsCard": {
+      "title": "📊 Tín hiệu Giao dịch",
+      "subtitle": "AI Thông minh • Smart Money • Theo dõi Cá voi"
+    }
+  },
+  "news": {
+    "feed": {
+      "title": "Tin tức mới nhất",
+      "loading": "Đang tải tin tức...",
+      "error": "Không thể tải tin tức",
+      "noNews": "Không có tin tức",
+      "loadMore": "Tải thêm"
+    },
+    "card": {
+      "readMore": "Đọc thêm",
+      "unlocked": "🔓 Đã mở khóa! Chúc đọc vui",
+      "aiUnavailable": "Tóm tắt AI chưa có sẵn.",
+      "aiQuality": {
+        "noAI": "Không có AI",
+        "complete": "Hoàn chỉnh",
+        "partial": "Một phần",
+        "limited": "Hạn chế"
+      },
+      "trustLabel": "Độ tin cậy",
+      "unlockPrompt": "Mở khóa với {cost} $C87 (Bạn có {balance})",
+      "loginToUnlock": "Đăng nhập để mở khóa",
+      "unlockButton": "Mở khóa bài viết ({cost} $C87)",
+      "sentiment": {
+        "bullish": "Tăng",
+        "bearish": "Giảm",
+        "neutral": "Trung lập"
+      },
+      "trustScore": "Độ tin cậy",
+      "enhancedTrust": "Độ tin cậy nâng cao",
+      "baseTrust": "Độ tin cậy cơ bản",
+      "smartMoneyBonus": "Thưởng Smart Money",
+      "sentimentBonus": "Thưởng cảm xúc",
+      "onchainBonus": "Thưởng on-chain",
+      "verification": {
+        "verified": "Đã xác minh",
+        "unverified": "Chưa xác minh",
+        "pending": "Đang chờ"
+      }
+    },
+    "vote": {
+      "trust": "Tin cậy",
+      "fake": "Giả mạo",
+      "alreadyVoted": "Đã vote tin này rồi",
+      "loginRequired": "Vui lòng đăng nhập để vote",
+      "voteFailed": "Vote thất bại",
+      "voteSuccess": "Đã ghi nhận vote! +{tokens} C87",
+      "reward": "+{tokens} C87"
+    }
+  },
+  "signals": {
+    "title": "📊 Tín hiệu Giao dịch",
+    "subtitle": "Tín hiệu AI • Cập nhật 30s",
+    "updating": "Đang cập nhật...",
+    "lastUpdate": "Cập nhật",
+    "loadError": "Lỗi tải dữ liệu",
+    "cannotConnect": "Không thể kết nối đến server",
+    "tradingDecision": {
+      "title": "Quyết định giao dịch",
+      "risk": "Rủi ro",
+      "confidence": "Độ tin cậy",
+      "action": "Hành động",
+      "riskBand": {
+        "extreme": "CỰC KỲ CAO",
+        "high": "CAO",
+        "medium": "TRUNG BÌNH",
+        "moderate": "TRUNG BÌNH",
+        "low": "THẤP"
+      },
+      "actions": {
+        "strong_buy": "Mua mạnh",
+        "buy": "Mua",
+        "hold": "Giữ",
+        "monitor": "Theo dõi",
+        "sell": "Bán",
+        "strong_sell": "Bán mạnh"
+      }
+    },
+    "maxPosition": "Vị trí tối đa",
+    "activeAlerts": "Cảnh báo hoạt động",
+    "chart": {
+      "marketVol": "Biến động thị trường",
+      "liquidity": "Thanh khoản",
+      "sentiment": "Cảm xúc",
+      "technical": "Kỹ thuật",
+      "volume": "Khối lượng",
+      "whale": "Cá voi",
+      "correlation": "Tương quan",
+      "regulatory": "Quy định"
+    },
+    "alerts": {
+      "highWhale": "Phát hiện hoạt động cá voi lớn",
+      "volumeSpikeOn": "Tăng đột biến khối lượng trên {coin}"
+    },
+    "smartMoney": {
+      "title": "Dòng tiền thông minh {coin}",
+      "score": "Điểm",
+      "direction": "Hướng",
+      "confidence": "Độ tin cậy",
+      "timeframe": "Khung thời gian",
+      "modules": "Module đang hoạt động",
+      "noData": "Chưa có dữ liệu"
+    },
+    "sentiment": {
+      "title": "Cảm xúc {coin}",
+      "signal": "Tín hiệu",
+      "strength": "Sức mạnh",
+      "avgScore": "Điểm trung bình",
+      "weighted": "Trọng số",
+      "velocity": "Tốc độ",
+      "messages": "Tin nhắn đã phân tích",
+      "distribution": "Phân bố",
+      "bullish": "Tăng",
+      "bearish": "Giảm",
+      "neutral": "Trung lập",
+      "sources": "Nguồn",
+      "noData": "Chưa có dữ liệu"
+    },
+    "onchain": {
+      "title": "Phân tích On-Chain",
+      "state": "Trạng thái",
+      "bias": "Xu hướng",
+      "score": "Điểm",
+      "confidence": "Độ tin cậy",
+      "whaleActivity": "Hoạt động Whale",
+      "netFlow": "Dòng tiền ròng",
+      "dominance": "Thống trị",
+      "txCount": "Số giao dịch",
+      "transactions": "Giao dịch",
+      "dataQuality": "Chất lượng dữ liệu",
+      "completeness": "Độ đầy đủ",
+      "age": "Độ tuổi",
+      "recommendation": "Dùng trong giao dịch",
+      "noData": "Chưa có dữ liệu"
+    },
+    "whaleAlerts": {
+      "title": "Cảnh báo Whale",
+      "type": "Loại",
+      "accumulation": "TÍCH LŨY",
+      "distribution": "PHÂN PHỐI",
+      "netFlow": "Dòng tiền ròng",
+      "volume": "Khối lượng",
+      "transactions": "Giao dịch",
+      "dominance": "Thống trị",
+      "newAlert": "🐋 {count} cảnh báo whale mới phát hiện!",
+      "newAlerts": "🐋 {count} cảnh báo whale mới phát hiện!",
+      "noAlerts": "Không có cảnh báo whale",
+      "moreAlerts": "+{count} cảnh báo nữa"
+    },
+    "notifications": {
+      "riskChange": "Risk thay đổi: {risk}"
+    }
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "register": "Đăng ký",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?",
+    "loginSuccess": "Đăng nhập thành công!",
+    "logoutSuccess": "Đăng xuất thành công!",
+    "loginFailed": "Đăng nhập thất bại",
+    "registerSuccess": "Đăng ký thành công!",
+    "registerFailed": "Đăng ký thất bại"
+  },
+  "profile": {
+    "title": "Hồ sơ",
+    "balance": "Số dư",
+    "tier": "Hạng",
+    "memberSince": "Thành viên từ",
+    "votesCount": "Số vote",
+    "settings": "Cài đặt",
+    "editProfile": "Sửa hồ sơ",
+    "changePassword": "Đổi mật khẩu"
+  },
+  "trending": {
+    "title": "Xu hướng",
+    "volume24h": "Khối lượng 24h",
+    "change24h": "Thay đổi 24h"
+  },
+  "offline": {
+    "title": "Bạn đang offline",
+    "message": "Một số tính năng có thể không khả dụng"
+  },
+  "pwa": {
+    "install": "Cài đặt ứng dụng",
+    "installPrompt": "Cài đặt Coin87 để có trải nghiệm tốt hơn"
+  },
+  "toast": {
+    "success": "Thành công!",
+    "error": "Lỗi!",
+    "warning": "Cảnh báo!",
+    "info": "Thông tin"
+  }
+}

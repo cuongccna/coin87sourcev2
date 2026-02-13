@@ -1,0 +1,26 @@
+"""Systemd Service File for Coin87 Frontend (Next.js)
+Location: /etc/systemd/system/coin87-frontend.service
+"""
+
+[Unit]
+Description=Coin87 Frontend PWA (Next.js)
+After=network.target
+
+[Service]
+Type=simple
+User=coin87admin
+Group=coin87admin
+WorkingDirectory=/opt/coin87/frontend
+Environment="NODE_ENV=production"
+Environment="PORT=9011"
+EnvironmentFile=/opt/coin87/.env
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=10
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

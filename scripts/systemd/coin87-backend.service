@@ -1,0 +1,27 @@
+"""Systemd Service File for Coin87 Backend (FastAPI)
+Location: /etc/systemd/system/coin87-backend.service
+"""
+
+[Unit]
+Description=Coin87 Backend API (FastAPI)
+After=network.target postgresql.service redis.service
+Wants=postgresql.service redis.service
+
+[Service]
+Type=simple
+User=coin87admin
+Group=coin87admin
+WorkingDirectory=/opt/coin87/backend
+Environment="PATH=/opt/coin87/backend/venv/bin"
+Environment="PYTHONUNBUFFERED=1"
+EnvironmentFile=/opt/coin87/.env
+ExecStart=/opt/coin87/backend/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 9010 --workers 2
+Restart=always
+RestartSec=10
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

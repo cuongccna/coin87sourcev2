@@ -1,0 +1,235 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Try Again",
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "more": "More",
+    "less": "Less"
+  },
+  "header": {
+    "title": "Coin87",
+    "subtitle": "Crypto Intelligence"
+  },
+  "nav": {
+    "home": "Home",
+    "signals": "Signals",
+    "news": "News",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Vietnamese",
+    "switchTo": "Switch to {language}"
+  },
+  "home": {
+    "signalsCard": {
+      "title": "Trading Signals Dashboard",
+      "subtitle": "AI Intelligence • Smart Money • Whale Tracking"
+    }
+  },
+  "news": {
+    "feed": {
+      "title": "Latest News",
+      "loading": "Loading news...",
+      "error": "Failed to load news",
+      "noNews": "No news available",
+      "loadMore": "Load More"
+    },
+    "card": {
+      "readMore": "Read More",
+      "unlocked": "Unlocked! Enjoy reading",
+      "aiUnavailable": "AI Summary not available yet.",
+      "aiQuality": {
+        "noAI": "No AI",
+        "complete": "Complete",
+        "partial": "Partial",
+        "limited": "Limited"
+      },
+      "trustLabel": "Trust",
+      "unlockPrompt": "Unlock with {cost} $C87 (You have {balance})",
+      "loginToUnlock": "Login to unlock",
+      "unlockButton": "Unlock News ({cost} $C87)",
+      "sentiment": {
+        "bullish": "Bullish",
+        "bearish": "Bearish",
+        "neutral": "Neutral"
+      },
+      "trustScore": "Trust Score",
+      "enhancedTrust": "Enhanced Trust",
+      "baseTrust": "Base Trust",
+      "smartMoneyBonus": "Smart Money Bonus",
+      "sentimentBonus": "Sentiment Bonus",
+      "onchainBonus": "On-chain Bonus",
+      "verification": {
+        "verified": "Verified",
+        "unverified": "Unverified",
+        "pending": "Pending"
+      }
+    },
+    "vote": {
+      "trust": "Trust",
+      "fake": "Fake",
+      "alreadyVoted": "Already voted on this news",
+      "loginRequired": "Please login to vote",
+      "voteFailed": "Vote failed",
+      "voteSuccess": "Vote recorded! +{tokens} C87",
+      "reward": "+{tokens} C87"
+    }
+  },
+  "signals": {
+    "title": "Trading Signals",
+    "subtitle": "AI Signals • Updated every 30s",
+    "updating": "Updating...",
+    "lastUpdate": "Updated",
+    "loadError": "Failed to load data",
+    "cannotConnect": "Cannot connect to server",
+    "tradingDecision": {
+      "title": "Trading Decision",
+      "risk": "Risk",
+      "confidence": "Confidence",
+      "action": "Action",
+      "riskBand": {
+        "extreme": "EXTREME",
+        "moderate": "MODERATE",
+        "high": "HIGH",
+        "medium": "MEDIUM",
+        "low": "LOW"
+      },
+      "actions": {
+        "strong_buy": "Strong Buy",
+        "buy": "Buy",
+        "hold": "Hold",
+        "monitor": "Monitor",
+        "sell": "Sell",
+        "strong_sell": "Strong Sell"
+      }
+    },
+    "maxPosition": "Max Position",
+    "activeAlerts": "Active Alerts",
+    "chart": {
+      "marketVol": "Market Vol",
+      "liquidity": "Liquidity",
+      "sentiment": "Sentiment",
+      "technical": "Technical",
+      "volume": "Volume",
+      "whale": "Whale",
+      "correlation": "Correlation",
+      "regulatory": "Regulatory"
+    },
+    "alerts": {
+      "highWhale": "High whale activity detected",
+      "volumeSpikeOn": "Volume spike on {coin}"
+    },
+    "smartMoney": {
+      "title": "Smart Money {coin}",
+      "score": "Score",
+      "direction": "Direction",
+      "confidence": "Confidence",
+      "timeframe": "Timeframe",
+      "modules": "Active Modules",
+      "noData": "No data available"
+    },
+    "sentiment": {
+      "title": "{coin} Sentiment",
+      "signal": "Signal",
+      "strength": "Strength",
+      "avgScore": "Avg Score",
+      "weighted": "Weighted",
+      "velocity": "Velocity",
+      "messages": "Messages analyzed",
+      "distribution": "Distribution",
+      "bullish": "Bullish",
+      "bearish": "Bearish",
+      "neutral": "Neutral",
+      "sources": "Sources",
+      "noData": "No data available"
+    },
+    "onchain": {
+      "title": "On-Chain Intelligence",
+      "state": "State",
+      "bias": "Bias",
+      "score": "Score",
+      "confidence": "Confidence",
+      "whaleActivity": "Whale Activity",
+      "netFlow": "Net Flow",
+      "dominance": "Dominance",
+      "txCount": "TX Count",
+      "transactions": "Transactions",
+      "dataQuality": "Data Quality",
+      "completeness": "Completeness",
+      "age": "Age",
+      "recommendation": "Use in trading",
+      "noData": "No data available"
+    },
+    "whaleAlerts": {
+      "title": "Whale Alerts",
+      "type": "Type",
+      "accumulation": "ACCUMULATION",
+      "distribution": "DISTRIBUTION",
+      "netFlow": "Net Flow",
+      "volume": "Volume",
+      "transactions": "Transactions",
+      "dominance": "Dominance",
+      "newAlert": "{count} new whale alert detected!",
+      "newAlerts": "{count} new whale alerts detected!",
+      "noAlerts": "No whale alerts",
+      "moreAlerts": "+{count} more alerts"
+    },
+    "notifications": {
+      "riskChange": "Risk changed: {risk}"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loginSuccess": "Login successful!",
+    "logoutSuccess": "Logout successful!",
+    "loginFailed": "Login failed",
+    "registerSuccess": "Registration successful!",
+    "registerFailed": "Registration failed"
+  },
+  "profile": {
+    "title": "Profile",
+    "balance": "Balance",
+    "tier": "Tier",
+    "memberSince": "Member since",
+    "votesCount": "Votes",
+    "settings": "Settings",
+    "editProfile": "Edit Profile",
+    "changePassword": "Change Password"
+  },
+  "trending": {
+    "title": "Trending Coins",
+    "volume24h": "24h Volume",
+    "change24h": "24h Change"
+  },
+  "offline": {
+    "title": "You are offline",
+    "message": "Some features may not be available"
+  },
+  "pwa": {
+    "install": "Install App",
+    "installPrompt": "Install Coin87 for a better experience"
+  },
+  "toast": {
+    "success": "Success!",
+    "error": "Error!",
+    "warning": "Warning!",
+    "info": "Information"
+  }
+}
