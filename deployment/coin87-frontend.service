@@ -5,17 +5,17 @@ Requires=coin87-backend.service
 
 [Service]
 Type=simple
-User=coin87
-Group=coin87
-WorkingDirectory=/home/coin87/coin87sourcev2/frontend
-Environment="PATH=/home/coin87/.nvm/versions/node/v18.17.0/bin:/usr/local/bin:/usr/bin:/bin"
+User=root
+Group=root
+WorkingDirectory=/var/www/coin87sourcev2/frontend
+Environment="PATH=/root/.nvm/versions/node/v18.17.0/bin:/usr/local/bin:/usr/bin:/bin"
 Environment="NODE_ENV=production"
 Environment="PORT=9011"
-EnvironmentFile=/home/coin87/coin87sourcev2/frontend/.env.local
+EnvironmentFile=/var/www/coin87sourcev2/frontend/.env.local
 
 # Build and start
-ExecStartPre=/home/coin87/.nvm/versions/node/v18.17.0/bin/npm run build
-ExecStart=/home/coin87/.nvm/versions/node/v18.17.0/bin/npm start
+ExecStartPre=/root/.nvm/versions/node/v18.17.0/bin/npm run build
+ExecStart=/root/.nvm/versions/node/v18.17.0/bin/npm start
 
 # Restart policy
 Restart=always

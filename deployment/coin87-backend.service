@@ -5,15 +5,15 @@ Requires=postgresql.service
 
 [Service]
 Type=simple
-User=coin87
-Group=coin87
-WorkingDirectory=/home/coin87/coin87sourcev2/backend
-Environment="PATH=/home/coin87/.local/bin:/usr/local/bin:/usr/bin:/bin"
-Environment="PYTHONPATH=/home/coin87/coin87sourcev2/backend"
-EnvironmentFile=/home/coin87/coin87sourcev2/backend/.env
+User=root
+Group=root
+WorkingDirectory=/var/www/coin87sourcev2/backend
+Environment="PATH=/root/.local/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONPATH=/var/www/coin87sourcev2/backend"
+EnvironmentFile=/var/www/coin87sourcev2/backend/.env
 
 # Production command with 4 workers
-ExecStart=/home/coin87/.local/bin/uvicorn app.main:app \
+ExecStart=/root/.local/bin/uvicorn app.main:app \
     --host 127.0.0.1 \
     --port 9010 \
     --workers 4 \

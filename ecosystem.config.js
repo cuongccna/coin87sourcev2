@@ -15,17 +15,17 @@ module.exports = {
     // Backend API (FastAPI)
     {
       name: 'larai-backend',
-      script: '/home/coin87/.local/bin/uvicorn',
+      script: '/var/www/coin87sourcev2/backend/venv/bin/uvicorn',
       args: 'app.main:app --host 127.0.0.1 --port 9010 --workers 4',
-      cwd: '/home/coin87/coin87sourcev2/backend',
-      interpreter: '/home/coin87/coin87sourcev2/backend/venv/bin/python',
+      cwd: '/var/www/coin87sourcev2/backend',
+      interpreter: '/var/www/coin87sourcev2/backend/venv/bin/python',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '1G',
       env: {
-        PYTHONPATH: '/home/coin87/coin87sourcev2/backend',
+        PYTHONPATH: '/var/www/coin87sourcev2/backend',
         NODE_ENV: 'production'
       },
       error_file: '/var/log/coin87/backend-error.log',
@@ -42,7 +42,7 @@ module.exports = {
       name: 'larai-frontend',
       script: 'npm',
       args: 'start',
-      cwd: '/home/coin87/coin87sourcev2/frontend',
+      cwd: '/var/www/coin87sourcev2/frontend',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
@@ -68,16 +68,16 @@ module.exports = {
     // Main Crawler - Chạy liên tục 24/7
     {
       name: 'larai-crawler',
-      script: '/home/coin87/coin87sourcev2/backend/venv/bin/python',
+      script: '/var/www/coin87sourcev2/backend/venv/bin/python',
       args: 'main_crawler.py',
-      cwd: '/home/coin87/coin87sourcev2/backend',
+      cwd: '/var/www/coin87sourcev2/backend',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '512M',
       env: {
-        PYTHONPATH: '/home/coin87/coin87sourcev2/backend'
+        PYTHONPATH: '/var/www/coin87sourcev2/backend'
       },
       error_file: '/var/log/coin87/crawler-error.log',
       out_file: '/var/log/coin87/crawler-out.log',
@@ -91,16 +91,16 @@ module.exports = {
     // Background Ranking - Tính ranking
     {
       name: 'larai-ranking',
-      script: '/home/coin87/coin87sourcev2/backend/venv/bin/python',
+      script: '/var/www/coin87sourcev2/backend/venv/bin/python',
       args: 'background_ranking.py',
-      cwd: '/home/coin87/coin87sourcev2/backend',
+      cwd: '/var/www/coin87sourcev2/backend',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '512M',
       env: {
-        PYTHONPATH: '/home/coin87/coin87sourcev2/backend'
+        PYTHONPATH: '/var/www/coin87sourcev2/backend'
       },
       error_file: '/var/log/coin87/ranking-error.log',
       out_file: '/var/log/coin87/ranking-out.log',
@@ -114,16 +114,16 @@ module.exports = {
     // Background Clustering - Gom nhóm tin
     {
       name: 'larai-clustering',
-      script: '/home/coin87/coin87sourcev2/backend/venv/bin/python',
+      script: '/var/www/coin87sourcev2/backend/venv/bin/python',
       args: 'background_clustering.py',
-      cwd: '/home/coin87/coin87sourcev2/backend',
+      cwd: '/var/www/coin87sourcev2/backend',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '512M',
       env: {
-        PYTHONPATH: '/home/coin87/coin87sourcev2/backend'
+        PYTHONPATH: '/var/www/coin87sourcev2/backend'
       },
       error_file: '/var/log/coin87/clustering-error.log',
       out_file: '/var/log/coin87/clustering-out.log',
@@ -137,16 +137,16 @@ module.exports = {
     // Background Verifier - Truth Engine
     {
       name: 'larai-verifier',
-      script: '/home/coin87/coin87sourcev2/backend/venv/bin/python',
+      script: '/var/www/coin87sourcev2/backend/venv/bin/python',
       args: 'background_verifier.py',
-      cwd: '/home/coin87/coin87sourcev2/backend',
+      cwd: '/var/www/coin87sourcev2/backend',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '512M',
       env: {
-        PYTHONPATH: '/home/coin87/coin87sourcev2/backend'
+        PYTHONPATH: '/var/www/coin87sourcev2/backend'
       },
       error_file: '/var/log/coin87/verifier-error.log',
       out_file: '/var/log/coin87/verifier-out.log',

@@ -5,7 +5,7 @@
 set -e
 
 # Configuration
-BACKUP_DIR="/home/coin87/backups"
+BACKUP_DIR="/var/www/backups"
 DB_NAME="coin87v2_db"
 DB_USER="coin87v2_user"
 RETENTION_DAYS=7

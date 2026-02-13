@@ -9,7 +9,7 @@ echo "🚀 LARAI.VN QUICK DEPLOY"
 echo "================================"
 
 # Variables
-APP_DIR="/home/coin87/coin87sourcev2"
+APP_DIR="/var/www/coin87sourcev2"
 BACKEND_DIR="$APP_DIR/backend"
 FRONTEND_DIR="$APP_DIR/frontend"
 

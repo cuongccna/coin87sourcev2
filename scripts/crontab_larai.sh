@@ -16,7 +16,7 @@ cat > $CRON_FILE << 'EOF'
 # ==========================================
 # Database Backup - Daily at 2:00 AM
 # ==========================================
-0 2 * * * /home/coin87/coin87sourcev2/scripts/backup_db.sh >> /var/log/coin87/backup.log 2>&1
+0 2 * * * /var/www/coin87sourcev2/scripts/backup_db.sh >> /var/log/coin87/backup.log 2>&1
 
 # ==========================================
 # PM2 Save State - Every 6 hours (in case of manual changes)
@@ -31,12 +31,12 @@ cat > $CRON_FILE << 'EOF'
 # ==========================================
 # Cleanup old news - Daily at 4:00 AM (keep last 30 days)
 # ==========================================
-0 4 * * * cd /home/coin87/coin87sourcev2/backend && /home/coin87/coin87sourcev2/backend/venv/bin/python -c "from app.db.database import SessionLocal; from app.models.news import News; from datetime import datetime, timedelta; db = SessionLocal(); cutoff = datetime.now() - timedelta(days=30); db.query(News).filter(News.created_at < cutoff).delete(); db.commit(); db.close()" >> /var/log/coin87/cleanup.log 2>&1
+0 4 * * * cd /var/www/coin87sourcev2/backend && /var/www/coin87sourcev2/backend/venv/bin/python -c "from app.db.database import SessionLocal; from app.models.news import News; from datetime import datetime, timedelta; db = SessionLocal(); cutoff = datetime.now() - timedelta(days=30); db.query(News).filter(News.created_at < cutoff).delete(); db.commit(); db.close()" >> /var/log/coin87/cleanup.log 2>&1
 
 # ==========================================
 # Health Check & Alert - Every 15 minutes
 # ==========================================
-*/15 * * * * /home/coin87/coin87sourcev2/scripts/health_check.sh >> /var/log/coin87/health.log 2>&1
+*/15 * * * * /var/www/coin87sourcev2/scripts/health_check.sh >> /var/log/coin87/health.log 2>&1
 
 # ==========================================
 # Restart PM2 processes if needed - Every hour
