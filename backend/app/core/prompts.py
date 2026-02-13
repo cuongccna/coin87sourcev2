@@ -18,6 +18,7 @@ Follow this schema strictly:
   "is_relevant": true,  // Set to false if the content is spam, ads, or non-crypto related.
   "category_type": "market_move", // Enum: "market_move", "project_update", "partnership", "security", "opinion"
   "summary_vi": "A concise, 2-sentence summary in Vietnamese. Focus on the impact.",
+  "summary_en": "A concise, 2-sentence summary in English. Focus on the impact.",
   "sentiment_score": 0.0, // Float from -1.0 (Very Bearish) to 1.0 (Very Bullish)
   "sentiment_label": "Neutral", // Enum: "Bullish", "Bearish", "Neutral", "FUD", "Scam Alert"
   "coins_mentioned": ["BTC"], // Array of ticker symbols found or implied.
@@ -29,7 +30,7 @@ Follow this schema strictly:
 **RULES:**
 1. **Be Critical:** Do not just summarize. Analyze the potential market impact.
 2. **Detect Scams:** If the text mentions "giveaway", "send ETH to verify", or suspicious URLs, set `sentiment_label` to "Scam Alert" and `risk_level` to "CRITICAL".
-3. **Language:** "summary_vi" MUST be in **Vietnamese**. All other fields in English/Standard Code.
+3. **Language:** "summary_vi" MUST be in **Vietnamese**. "summary_en" MUST be in **English**. All other fields in English/Standard Code.
 4. **No Hallucination:** If no coins are mentioned, return an empty list `[]`.
 5. **Category Classification:**
    - "market_move": Price predictions, pumps, dumps, whale activity, technical analysis

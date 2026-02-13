@@ -25,6 +25,7 @@ class NewsBase(BaseModel):
 
     # AI Fields
     summary_vi: Optional[str] = None
+    summary_en: Optional[str] = None
     sentiment_score: Optional[float] = None
     sentiment_label: Optional[str] = None
     coins_mentioned: List[str] = []

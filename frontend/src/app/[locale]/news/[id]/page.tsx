@@ -69,7 +69,10 @@ export default function NewsDetailPage() {
     return null;
   }
 
-  const aiQuality = getAIQuality(news.summary_vi);
+  const locale = Array.isArray(params.locale) ? params.locale[0] : params.locale;
+  const summary = (locale === 'en' && news.summary_en ? news.summary_en : news.summary_vi) || news.summary_vi;
+
+  const aiQuality = getAIQuality(summary);
   let tagsDisplay: string[] = [];
   if (Array.isArray(news.tags)) {
     tagsDisplay = news.tags;
@@ -132,7 +135,7 @@ export default function NewsDetailPage() {
             AI Analysis
           </h2>
           <div className="text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">
-            {news.summary_vi || "AI Summary not available yet."}
+            {summary || "AI Summary not available yet."}
           </div>
         </div>
 

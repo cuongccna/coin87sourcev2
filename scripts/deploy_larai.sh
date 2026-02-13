@@ -10,7 +10,7 @@ BACKEND_DIR="$APP_DIR/backend"
 FRONTEND_DIR="$APP_DIR/frontend"
 
 echo "================================"
-echo "COIN87 DEPLOYMENT SCRIPT"
+echo "LARAI.VN DEPLOYMENT SCRIPT"
 echo "================================"
 
 # Step 1: Pull latest code (SKIPPED as per request)
@@ -52,6 +52,6 @@ sudo systemctl status coin87-frontend --no-pager
 echo "================================"
 echo "✓ Deployment Complete!"
 echo "================================"
-echo "Backend: http://localhost:9010/docs"
-echo "Frontend: http://localhost:9011"
+echo "Backend: https://larai.vn/api/docs"
+echo "Frontend: https://larai.vn"
 echo "================================"

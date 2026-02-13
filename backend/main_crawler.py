@@ -94,6 +94,7 @@ async def main():
 
                         ai_data = {
                             "summary_vi": analysis.get("summary_vi"),
+                            "summary_en": analysis.get("summary_en"),
                             "sentiment_score": analysis.get("sentiment_score"),
                             "sentiment_label": analysis.get("sentiment_label"),
                             "coins_mentioned": analysis.get("coins_mentioned", []),

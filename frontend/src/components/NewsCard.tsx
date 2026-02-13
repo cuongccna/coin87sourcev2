@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
 // import { vi } from "date-fns/locale"; // Vietnamese locale if needed
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { VoteActions } from "./VoteActions";
 
@@ -20,6 +20,9 @@ interface NewsCardProps {
 export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   const { user } = useAuth();
   const t = useTranslations('news');
+  const locale = useLocale();
+  const summary = (locale === 'en' ? news.summary_en : news.summary_vi) || news.summary_vi; // Fallback to VI if EN is missing (usually backward compat)
+
   const [isUnlocked, setIsUnlocked] = useState(false);
   const isPro = user?.tier === "Pro" || user?.tier === "Elite";
   
@@ -52,10 +55,10 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
 
   // Get AI quality indicator
   const getAIQuality = () => {
-    if (!news.summary_vi || news.summary_vi === t('card.aiUnavailable')) {
+    if (!summary || summary === t('card.aiUnavailable')) {
       return { label: t('card.aiQuality.noAI'), icon: XCircle, color: "text-red-500", bg: "bg-red-500/10" };
     }
-    const len = news.summary_vi.length;
+    const len = summary.length;
     if (len > 200) return { label: t('card.aiQuality.complete'), icon: CheckCircle2, color: "text-green-500", bg: "bg-green-500/10" };
     if (len > 100) return { label: t('card.aiQuality.partial'), icon: AlertCircle, color: "text-yellow-500", bg: "bg-yellow-500/10" };
     return { label: t('card.aiQuality.limited'), icon: AlertCircle, color: "text-orange-500", bg: "bg-orange-500/10" };
@@ -161,7 +164,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
       <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700/50">
             {canViewContent ? (
           <div className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            {news.summary_vi || "AI Summary not available yet."}
+            {summary || "AI Summary not available yet."}
           </div>
         ) : (
           <div className="text-center py-4">

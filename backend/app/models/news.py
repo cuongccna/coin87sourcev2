@@ -32,6 +32,7 @@ class News(Base):
     
     # AI Analysis Columns (Task 2.3)
     summary_vi = Column(Text, nullable=True)
+    summary_en = Column(Text, nullable=True) # Task: Add English Summary
     sentiment_score = Column(Float, nullable=True)
     sentiment_label = Column(String, nullable=True)
     coins_mentioned = Column(JSON, default=[])

@@ -23,6 +23,7 @@ export interface NewsItem {
   
   // AI Fields
   summary_vi?: string;
+  summary_en?: string;
   sentiment_score?: number;
   sentiment_label?: string;
   coins_mentioned?: string[]; // JSON string or array depending on backend
