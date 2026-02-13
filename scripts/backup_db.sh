@@ -1,26 +1,28 @@
 #!/bin/bash
-# Database Backup Script for Coin87
-# Add to crontab: 0 3 * * * /opt/coin87/scripts/backup_db.sh
+# Database Backup Script for LARAI.VN
+# Runs daily at 2:00 AM via cron
 
 set -e
 
 # Configuration
-BACKUP_DIR="/opt/coin87/backups"
-DB_NAME="coin87_db"
-DB_USER="coin87_user"
+BACKUP_DIR="/home/coin87/backups"
+DB_NAME="coin87v2_db"
+DB_USER="coin87v2_user"
 RETENTION_DAYS=7
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-BACKUP_FILE="$BACKUP_DIR/coin87_backup_$TIMESTAMP.sql.gz"
+BACKUP_FILE="$BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.sql.gz"
 
 # Create backup directory if not exists
 mkdir -p $BACKUP_DIR
 
 echo "================================"
-echo "Starting database backup..."
+echo "🗄️  Starting database backup..."
 echo "================================"
 
-# Dump database and compress
-pg_dump -U $DB_USER -d $DB_NAME | gzip > $BACKUP_FILE
+# Dump database and compress (with password)
+export PGPASSWORD='Cuongnv123456'
+pg_dump -U $DB_USER -h localhost -d $DB_NAME | gzip > $BACKUP_FILE
+unset PGPASSWORD
 
 # Check if backup was successful
 if [ $? -eq 0 ]; then
@@ -34,8 +36,13 @@ fi
 
 # Delete old backups (keep last 7 days)
 echo "Cleaning up old backups..."
-find $BACKUP_DIR -name "coin87_backup_*.sql.gz" -mtime +$RETENTION_DAYS -delete
+find $BACKUP_DIR -name "${DB_NAME}_*.sql.gz" -mtime +$RETENTION_DAYS -delete
 echo "✓ Old backups deleted (kept last $RETENTION_DAYS days)"
+
+# List recent backups
+echo ""
+echo "Recent backups:"
+ls -lh $BACKUP_DIR/*.sql.gz 2>/dev/null | tail -n 5 || echo "No backups found"
 
 echo "================================"
 echo "Backup complete!"
