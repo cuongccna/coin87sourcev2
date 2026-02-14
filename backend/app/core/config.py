@@ -11,6 +11,13 @@ class Settings(BaseSettings):
     # Database
     DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost:5432/coin87"
     
+    # Security
+    SECRET_KEY: str = "Eon5Eq-fqIjqyiqfmTaWxGionh8x91ztGDam7LMIRPQ"
+    API_KEY_SALT: str = "zX_08Zagyk8kx3mish7y5g"
+
+    # Redis
+    REDIS_URL: str = "redis://localhost:6379/0"
+
     # API Keys
     GEMINI_API_KEY: Optional[str] = None
     GEMINI_MODEL: str = "gemini-2.0-flash-lite"
