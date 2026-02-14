@@ -78,8 +78,11 @@ pm2 startup systemd -u root --hp /root
 # Nginx setup
 echo "[8/8] Setting up Nginx..."
 cp deployment/nginx-larai.conf /etc/nginx/sites-available/larai.vn
-ln -sf /etc/nginx/sites-available/larai.vn /etc/nginx/sites-enabled/
+# Remove potential conflicting configs
 rm -f /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-enabled/coin87
+rm -f /etc/nginx/sites-enabled/nginx-coin87.conf
+ln -sf /etc/nginx/sites-available/larai.vn /etc/nginx/sites-enabled/
 nginx -t
 systemctl reload nginx
 
