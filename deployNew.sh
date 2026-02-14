@@ -46,19 +46,19 @@ npm install -g pm2
 echo "[5/8] Setting up backend..."
 cd $APP_DIR/backend
 cp .env.production.larai .env
+rm -rf venv
 python3.11 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
-pip install wheel setuptools
-pip install sqlalchemy[asyncio] asyncpg alembic
-pip install fastapi uvicorn[standard] pydantic pydantic-settings python-multipart
-pip install redis google-generativeai
-pip install beautifulsoup4 lxml feedparser requests aiohttp httpx
-pip install python-jose[cryptography] passlib[bcrypt] bcrypt python-dotenv pytz
-python init_db.py
-python create_trading_signals_tables.py 2>/dev/null || true
-python create_vote_table.py 2>/dev/null || true
-deactivate
+./venv/bin/pip install --upgrade pip
+./venv/bin/pip install wheel setuptools
+./venv/bin/pip install "sqlalchemy[asyncio]" asyncpg alembic greenlet
+./venv/bin/pip install fastapi "uvicorn[standard]" pydantic pydantic-settings python-multipart
+./venv/bin/pip install redis google-generativeai
+./venv/bin/pip install beautifulsoup4 lxml feedparser requests aiohttp httpx
+./venv/bin/pip install "python-jose[cryptography]" "passlib[bcrypt]" bcrypt python-dotenv pytz
+./venv/bin/python init_db.py
+./venv/bin/python create_trading_signals_tables.py 2>/dev/null || true
+./venv/bin/python create_vote_table.py 2>/dev/null || true
+# No need to deactivate as we used explicit paths
 
 # Frontend setup
 echo "[6/8] Setting up frontend..."
