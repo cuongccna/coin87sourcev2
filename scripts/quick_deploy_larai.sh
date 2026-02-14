@@ -1,6 +1,6 @@
 #!/bin/bash
 # Quick Deploy Script for LARAI.VN (VPS)
-# Run this on VPS: /home/coin87/coin87sourcev2/scripts/quick_deploy_larai.sh
+# Run this on VPS: /var/www/coin87sourcev2/scripts/quick_deploy_larai.sh
 
 set -e
 
@@ -25,7 +25,16 @@ echo "[2/5] 🔧 Updating Backend..."
 cd $BACKEND_DIR
 source venv/bin/activate
 pip install --upgrade pip -q
-pip install -r requirements.txt -q
+
+# Use production requirements (no Windows-only packages like Kivy)
+if [ -f "requirements-production.txt" ]; then
+    echo "Installing production requirements..."
+    pip install -r requirements-production.txt -q
+else
+    echo "Installing all requirements (may have errors on Linux)..."
+    pip install -r requirements.txt -q --ignore-installed || true
+fi
+
 deactivate
 
 # Step 3: Update Frontend
@@ -77,10 +86,9 @@ echo "Website: https://larai.vn"
 echo "API Health: https://larai.vn/api/health"
 echo ""
 echo "View logs:"
-echo "  Backend:  sudo journalctl -u coin87-backend -f"
-echo "  Frontend: sudo journalctl -u coin87-frontend -f"
-echo "==All:      pm2 logs"
+echo "  All:      pm2 logs"
 echo "  Backend:  pm2 logs larai-backend"
 echo "  Frontend: pm2 logs larai-frontend"
 echo "  Crawler:  pm2 logs larai-crawler"
-echo "  Monitor:  pm2 monit
+echo "  Monitor:  pm2 monit"
+echo "================================"

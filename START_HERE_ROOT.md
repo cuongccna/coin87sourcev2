@@ -11,7 +11,7 @@ cd coin87sourcev2
 # Backend
 cd backend && python3.11 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-production.txt
 cp .env.production.larai .env
 python init_db.py && python create_trading_signals_tables.py && python create_vote_table.py
 deactivate

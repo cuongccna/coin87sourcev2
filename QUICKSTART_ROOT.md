@@ -93,9 +93,9 @@ cd /var/www/coin87sourcev2/backend
 python3.11 -m venv venv
 source venv/bin/activate
 
-# Install dependencies
+# Install dependencies (production only - no Windows packages)
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements-production.txt
 
 # Copy .env
 cp .env.production.larai .env
