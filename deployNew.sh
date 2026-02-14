@@ -20,7 +20,10 @@ DB_NAME=$(echo $DATABASE_URL | sed -n 's/.*\/\([^?]*\).*/\1/p')
 # Install system dependencies
 echo "[1/8] Installing system packages..."
 apt update
-apt install -y python3.11 python3.11-venv python3-pip postgresql postgresql-contrib nginx redis-server certbot python3-certbot-nginx curl jq
+apt install -y software-properties-common
+add-apt-repository -y ppa:deadsnakes/ppa
+apt update
+apt install -y python3.11 python3.11-venv python3.11-dev python3-pip postgresql postgresql-contrib nginx redis-server certbot python3-certbot-nginx curl jq
 
 # Setup database
 echo "[2/8] Setting up database..."
@@ -45,12 +48,13 @@ cd $APP_DIR/backend
 python3.11 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
-pip install fastapi uvicorn sqlalchemy asyncpg alembic redis google-generativeai beautifulsoup4 feedparser python-jose passlib bcrypt python-dotenv pytz aiohttp httpx
-cp .env.production.larai .env
-python init_db.py
-python create_trading_signals_tables.py 2>/dev/null || true
-python create_vote_table.py 2>/dev/null || true
+pip install fastapi uvicorn sqlalchemy asyncpg alembic redis google-generativeai beautifulsoup4 feedparser python-jose passlib bcrypt python-dotenv pytz aiohttp httpx pydantic pydantic-settings python-multipart lxml requests
 deactivate
+
+cp .env.production.larai .env
+venv/bin/python init_db.py
+venv/bin/python create_trading_signals_tables.py 2>/dev/null || true
+venv/bin/python create_vote_table.py 2>/dev/null || true
 
 # Frontend setup
 echo "[6/8] Setting up frontend..."
